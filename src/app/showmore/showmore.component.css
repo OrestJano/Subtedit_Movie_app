@@ -1,0 +1,136 @@
+body{
+    background: #ddd;    
+    font-family: sans-serif;
+}
+
+section.midstarwars {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 700px;
+}
+
+/* card */
+.card-sw  .background{
+   
+    width: 80%;
+    min-width: 830px; 
+    max-width: 1100px;
+    height: 625px; 
+    position: relative;
+    color: white;
+    background-color: white; 
+    box-shadow: 0px 7px 25px 6px rgba(0,0,0,0.2);
+    
+    background-size: cover;
+}
+
+.card-head {
+    display: flex;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    justify-content: space-between;
+    padding: 0px 20px;
+    align-items: center;
+}
+ 
+ 
+.card-infos {
+    
+    width: 90%;
+    position: absolute;
+    padding: 20px 50px;
+    z-index: 2;
+    bottom: 10px;
+
+}
+.card-infos h1{
+    margin-bottom: 15px;
+    margin-top: 5px;
+    
+    font-size: 2.2em;
+}
+.card-infos p{ 
+    margin-bottom: 5px;
+    margin-top: 5px;
+    line-height: 1.5;
+}
+img.movie-img {
+    max-height: 440px;
+    left: -200px;
+    position: absolute;
+    transition: all .5s ease-in-out;
+}
+img.movie-img:hover{
+    transform: scale(1.1);
+}
+
+
+ 
+
+.button.watch-netflix {
+    background: red;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 800;
+    margin-top: 20px;
+    color: white;
+    cursor: pointer;
+}
+.bottomshadow {
+    background: linear-gradient(0deg, #000,transparent); 
+    height: 80%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+/* title and score */
+.title {
+    display: flex;
+    align-items: center;
+}
+
+.score{
+    
+    display: flex;
+    align-items: center;
+    width: 114px; 
+    justify-content: space-evenly;
+} 
+.score .icon {
+    margin-left: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.score .icon i.fab.fa-jedi-order {
+    font-size: 24px;
+    color: #8BC34A;
+}
+.realscore span {
+    
+    font-size: 12px;
+    position: absolute;
+    top: 4px;
+    color: white;
+    right: -18px;
+}
+
+h3.realscore {
+    position: relative;
+    font-size: 32px;
+    margin: 0;
+    color: #8BC34A;
+}
+
+* {
+    box-sizing: border-box;
+}

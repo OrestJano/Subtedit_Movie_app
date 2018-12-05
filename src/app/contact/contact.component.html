@@ -1,0 +1,35 @@
+<div *ngIf="!name; else forminfo">
+    <form [formGroup]="rForm" (ngSubmit)="addPost(rForm.value)">
+      <div >
+        <div class="container">
+          <h1>Contact</h1>
+          <label>Name
+            <input required type="text" formControlName="name">
+          </label>
+
+          <label>Email
+              <input required type="email" formControlName="email">
+            </label>
+  
+          <label>Message
+            <textarea required formControlName="message" style="height:30px"></textarea>
+          </label>
+
+          
+          <input type="submit" class="button expanded" value="Send Mail" [disabled]="!rForm.valid">
+        </div>
+      </div>
+    </form>
+  </div>
+  
+  <ng-template #forminfo>
+    <div class="form-container">
+      <div class="row columns">
+          <h1>{{ name }}</h1>
+
+          <h1>{{ email }}</h1>
+  
+          <p>{{ message }}</p>
+      </div>
+    </div>
+  </ng-template>

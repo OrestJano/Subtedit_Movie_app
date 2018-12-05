@@ -1,0 +1,48 @@
+
+<!--
+<p>Title: {{movie.title}}</p>
+<p>Description: {{movie.description}}</p>
+<p>Actors: {{movie.actors}}</p>
+<img src="{{movie.picture}}" alt="">
+<iframe width="800" height="329" [src]="url" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>{{movie.trailer}}</iframe>
+-->
+
+
+
+<section class="midstarwars">
+
+    <div class="card-sw">
+        <img class="background" src="{{movie.picture}}" alt="">
+        
+        <div class="card-head">
+            <h3> MOVIE </h3>
+            <div class="lateralbutton">
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-jedi-order"></i>
+                <i class="fab fa-first-order"></i>
+            </div>
+        </div>
+        <div class="card-infos">
+            <div class="title">
+                <h1>{{movie.title}} </h1>
+                <div class="score">
+            
+                
+            </div>
+            </div>
+
+            <div class="movie-description">
+                <p>{{movie.description}}</p>
+
+            </div>
+            <p>
+                <b> {{movie.actors}}</b>
+            </p>
+            <iframe width="400" height="329" [src]="url" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>{{movie.trailer}}</iframe>
+            <div class="button watch-netflix">Subredit Movie</div>
+        </div>
+        <div class="bottomshadow"></div>
+    </div>
+
+</section>
+

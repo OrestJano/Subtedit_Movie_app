@@ -1,0 +1,83 @@
+<div>
+<ul class="category">
+  <li *ngFor="let category of categories" >
+    <button (click)="selectCat(category)">{{category}}</button>
+    
+  </li>
+</ul>
+</div>
+<div id="container">
+  <div
+    ng2-carouselamos
+    class="slides-wrapper"
+    [items]="items"
+    [width]="900"
+    [$prev]="prev"
+    [$next]="next"
+    [$item]="item"
+  >
+  </div>
+
+  <div *ngFor="let movie of movies | catPipe: categorySelected" class="content">
+    
+    <div id="wrapper">
+
+      <div class="slider-for">
+
+        <div class="relative">
+
+          <img src="{{movie.picture}}" alt="">
+
+          <div class="absolute">
+
+            <div class="box">
+
+            <h2>Title: {{movie.title}}</h2>
+            
+            <div class="flex">
+
+              <div *ngIf="!favs.includes(movie); then addbutton else removebutton"></div>
+              <ng-template #addbutton>
+                <button (click)="addToFav(movie)" >Add to Fav</button>
+              </ng-template>
+              <ng-template #removebutton>
+                <button (click)="removeFav(movie)" >Remove from Fav</button>
+              </ng-template>
+                <button (click)="showMore(movie.id)" >Show more</button>
+          
+            </div><!--flex end-->
+
+             <p>Actors: {{movie.actors}}</p>
+
+             <p>Description: {{movie.description}}</p>
+
+            </div><!--box end-->
+
+          </div><!--absolute end-->
+
+        </div><!--relative end-->
+              <div>
+                <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+                  <li [ngClass]="{disabled:pager.currentPage === 1}">
+                      <a (click)="setMovies(1)">First</a>
+                  </li>
+                  <li [ngClass]="{disabled:pager.currentPage === 1}">
+                      <a (click)="setMovies(pager.currentPage - 1)">Previous</a>
+                  </li>
+                  <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                      <a (click)="setMovies(page)">{{page}}</a>
+                  </li>
+                  <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                      <a (click)="setMovies(pager.currentPage + 1)">Next</a>
+                  </li>
+                  <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                      <a (click)="setMovies(pager.totalPages)">Last</a>
+                  </li>
+                </ul>
+               
+              </div>
+  </div>
+  
+
+  
+  

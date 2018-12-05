@@ -1,0 +1,18 @@
+<div *ngFor="let fav of favData">
+
+
+      <div class="container">
+    <div class="movie-item">
+        <img src="{{fav.picture}}" alt="">
+        <h3>{{fav.title}}</h3>
+        <button (click)="removeFav(fav)">Remove</button>
+    </div>
+      
+      
+
+</div>
+
+  
+
+
+
